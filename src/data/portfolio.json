@@ -1,0 +1,149 @@
+{
+    "personal": {
+        "name": "Outmane El Ouafa",
+        "firstName": "Outmane",
+        "lastName": "El Ouafa",
+        "role": "Mobile & Web Developer",
+        "location": "Morocco",
+        "experienceYears": "3+",
+        "projectsCompleted": "20+",
+        "email": "outmanelouafa@gmail.com",
+        "phone": "+212 607166621",
+        "currentYear": 2026,
+        "social": {
+            "github": "https://github.com/outmanelouafa-sketch",
+            "linkedin": "https://www.linkedin.com/in/outmane-el-ouafa-5057282b2/",
+            "twitter": "https://twitter.com/"
+        }
+    },
+    "about": {
+        "title": "I'm Outmane, a passionate developer based in Morocco",
+        "description1": "With over 3 years of experience in mobile and web development, I specialize in creating seamless digital experiences that bridge the gap between design and functionality. My journey started with a curiosity for how things work, which evolved into a passion for building products that make a difference.",
+        "description2": "I believe in clean code, intuitive interfaces, and the power of collaboration. When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the developer community.",
+        "portraitImage": "/profile.jpg"
+    },
+    "skills": [
+        "Flutter",
+        "React",
+        "Node.js",
+        "Firebase",
+        "Supabase",
+        "Figma UI/UX"
+    ],
+    "navigation": [
+        {
+            "label": "About",
+            "href": "#about"
+        },
+        {
+            "label": "Skills",
+            "href": "#skills"
+        },
+        {
+            "label": "Projects",
+            "href": "/projects"
+        },
+        {
+            "label": "Services",
+            "href": "#services"
+        },
+        {
+            "label": "Contact",
+            "href": "#contact"
+        }
+    ],
+    "categories": {
+        "mobile_apps": {
+            "title": "MOBILE APPS",
+            "description": "Developing high-quality cross-platform mobile applications primarily with Flutter.",
+            "details": "I specialize in building feature-rich mobile apps that run smoothly on both iOS and Android. From initial concept to deployment, I handle the entire lifecycle of mobile app development.",
+            "projects_count": "10+ Flutter Apps"
+        },
+        "development": {
+            "title": "DEVELOPMENT",
+            "description": "Building performant and scalable web applications using React, Node.js, and modern tools.",
+            "details": "I focus on clean architecture, optimized performance, and seamless user experiences. Whether it's a simple landing page or a complex web platform, I ensure high-quality code and maintainability.",
+            "projects_count": "20+ Web Projects"
+        },
+        "designing": {
+            "title": "DESIGNING",
+            "description": "Crafting beautiful and intuitive user interfaces with a focus on user experience.",
+            "details": "Using Figma, I create modern, aesthetically pleasing designs that are both functional and delightful. My design process includes wireframing, prototyping, and high-fidelity UI design.",
+            "projects_count": "15+ UI/UX Designs"
+        }
+    },
+    "projects": [
+        {
+            "id": "volttech-store",
+            "title": "VOLTTECH STORE",
+            "subtitle": "Industrial Machinery E-commerce",
+            "description": "A high-performance marketplace for industrial electric machinery, featuring built-in AI diagnostics and real-time inventory tracking.",
+            "fullStory": "The VOLTTECH STORE project was born from the need to modernize the industrial machinery procurement process. Built with a focus on absolute performance and intuitive user experience, it allows companies to browse, compare, and purchase heavy-duty electric equipment with ease. The application features a deep-dark premium aesthetic, designed in Figma and brought to life with React and TypeScript. We integrated complex state management to handle thousands of technical specifications and a seamless checkout experience.",
+            "thumbnail": "/image.png",
+            "tags": [
+                "React",
+                "TypeScript",
+                "Figma",
+                "Tailwind CSS"
+            ],
+            "githubUrl": "https://github.com/outmanelouafa-sketch/VOLTTECH-STORE",
+            "liveUrl": "https://volttech-store.vercel.app"
+        },
+        {
+            "id": "exam-assistant",
+            "title": "EXAM ASSISTANT",
+            "subtitle": "AI-Powered Study Companion",
+            "description": "A Flutter mobile app that helps students prepare for exams using AI-generated quizzes, smart flashcards, and personalized study plans.",
+            "fullStory": "Exam Assistant was built to solve a real problem students face every semester — scattered notes, last-minute cramming, and no clear study path. On the mobile side, the app is built with Flutter using Clean Architecture and BLoC for state management, keeping the codebase scalable, testable, and easy to maintain. Authentication, AI services, and data processing are handled by a separate Flask backend — our focus stays on delivering a polished cross-platform mobile experience. From onboarding to daily practice sessions, every screen was designed for focus and momentum.",
+            "thumbnail": "/app-exam/image.png",
+            "tags": [
+                "Flutter",
+                "Dart",
+                "BLoC",
+                "Clean Architecture",
+                "Hive"
+            ],
+            "githubUrl": "#",
+            "liveUrl": "#",
+            "isPrivate": true,
+            "platform": "iOS & Android",
+            "framework": "Flutter 3.x · Clean Architecture · BLoC",
+            "year": "2025",
+            "features": [
+                "AI-generated quizzes from uploaded notes and PDFs",
+                "Spaced-repetition flashcards with progress tracking",
+                "Personalized daily study plans based on exam dates",
+                "Offline mode with local Hive cache",
+                "Dark & light themes with Material 3 design",
+                "Clean Architecture with BLoC state management"
+            ],
+            "tools": [
+                { "name": "Flutter", "role": "Cross-platform UI & navigation" },
+                { "name": "Dart", "role": "Core application logic" },
+                { "name": "BLoC", "role": "State management & business logic" },
+                { "name": "Clean Architecture", "role": "Layered app structure & separation of concerns" },
+                { "name": "Flask Backend", "role": "Authentication, AI integration & REST API services" },
+                { "name": "Hive", "role": "Offline local storage" },
+                { "name": "Figma", "role": "UI/UX design & prototyping" }
+            ],
+            "screenshots": [
+                "/app-exam/image.png",
+                "/app-exam/image copy.png",
+                "/app-exam/image copy 2.png",
+                "/app-exam/image copy 3.png",
+                "/app-exam/image copy 4.png",
+                "/app-exam/image copy 5.png",
+                "/app-exam/image copy 6.png",
+                "/app-exam/image copy 7.png",
+                "/app-exam/image copy 8.png",
+                "/app-exam/image copy 9.png",
+                "/app-exam/image copy 10.png",
+                "/app-exam/image copy 11.png",
+                "/app-exam/image copy 12.png",
+                "/app-exam/image copy 13.png",
+                "/app-exam/image copy 14.png",
+                "/app-exam/image copy 15.png"
+            ]
+        }
+    ]
+}
