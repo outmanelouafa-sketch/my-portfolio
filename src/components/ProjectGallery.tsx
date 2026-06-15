@@ -54,15 +54,15 @@ const ProjectGallery = ({ screenshots, title }: ProjectGalleryProps) => {
         </span>
       </div>
 
-      <div className="relative group">
+      <div className="relative group -mx-1 sm:mx-0">
         <Carousel
           setApi={setApi}
-          opts={{ align: 'start', loop: true }}
+          opts={{ align: 'center', loop: true }}
           className="w-full"
         >
-          <CarouselContent className="-ml-4">
+          <CarouselContent className="-ml-2 sm:-ml-4">
             {screenshots.map((src, index) => (
-              <CarouselItem key={src} className="pl-4 basis-full md:basis-[85%] lg:basis-[70%]">
+              <CarouselItem key={src} className="pl-2 sm:pl-4 basis-[88%] sm:basis-[85%] lg:basis-[70%]">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -70,12 +70,12 @@ const ProjectGallery = ({ screenshots, title }: ProjectGalleryProps) => {
                   transition={{ delay: index * 0.05 }}
                   className="relative"
                 >
-                  <div className="rounded-[2rem] overflow-hidden border border-border/50 bg-secondary/20 shadow-2xl">
-                    <div className="aspect-[9/19] max-h-[70vh] mx-auto flex items-center justify-center bg-black/40 p-4 md:p-8">
+                  <div className="rounded-xl sm:rounded-[2rem] overflow-hidden border border-border/50 bg-secondary/20 shadow-xl sm:shadow-2xl">
+                    <div className="aspect-[9/19] max-h-[55vh] sm:max-h-[65vh] lg:max-h-[70vh] mx-auto flex items-center justify-center bg-black/40 p-3 sm:p-4 md:p-8">
                       <img
                         src={encodeAssetPath(src)}
                         alt={`${title} screen ${index + 1}`}
-                        className="max-h-full w-auto object-contain rounded-2xl shadow-xl ring-1 ring-white/10"
+                        className="max-h-full w-auto object-contain rounded-lg sm:rounded-2xl shadow-xl ring-1 ring-white/10"
                         loading="lazy"
                       />
                     </div>
@@ -86,7 +86,7 @@ const ProjectGallery = ({ screenshots, title }: ProjectGalleryProps) => {
                       scrollTo(index);
                       setLightboxOpen(true);
                     }}
-                    className="absolute top-4 right-4 p-2.5 rounded-full bg-background/60 backdrop-blur-md border border-border/50 opacity-0 group-hover:opacity-100 transition-opacity hover:bg-background/80"
+                    className="absolute top-3 right-3 sm:top-4 sm:right-4 p-2 sm:p-2.5 rounded-full bg-background/60 backdrop-blur-md border border-border/50 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity hover:bg-background/80"
                     aria-label="View fullscreen"
                   >
                     <Maximize2 className="w-4 h-4" />
@@ -95,12 +95,12 @@ const ProjectGallery = ({ screenshots, title }: ProjectGalleryProps) => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="left-2 md:-left-5 bg-background/80 backdrop-blur-md border-border/50 hover:bg-primary hover:text-black hover:border-primary" />
-          <CarouselNext className="right-2 md:-right-5 bg-background/80 backdrop-blur-md border-border/50 hover:bg-primary hover:text-black hover:border-primary" />
+          <CarouselPrevious className="left-0 sm:left-2 md:-left-5 h-8 w-8 sm:h-10 sm:w-10 bg-background/90 backdrop-blur-md border-border/50 hover:bg-primary hover:text-black hover:border-primary" />
+          <CarouselNext className="right-0 sm:right-2 md:-right-5 h-8 w-8 sm:h-10 sm:w-10 bg-background/90 backdrop-blur-md border-border/50 hover:bg-primary hover:text-black hover:border-primary" />
         </Carousel>
       </div>
 
-      <div className="flex gap-3 overflow-x-auto pb-2 no-scrollbar snap-x snap-mandatory">
+      <div className="flex gap-2 sm:gap-3 overflow-x-auto pb-2 no-scrollbar snap-x snap-mandatory -mx-1 px-1">
         {screenshots.map((src, index) => (
           <button
             key={src}
@@ -145,7 +145,7 @@ const ProjectGallery = ({ screenshots, title }: ProjectGalleryProps) => {
           <img
             src={encodeAssetPath(screenshots[current])}
             alt={`${title} fullscreen`}
-            className="max-h-[90vh] max-w-full object-contain rounded-2xl"
+            className="max-h-[85vh] max-w-[95vw] sm:max-w-full object-contain rounded-xl sm:rounded-2xl"
             onClick={(e) => e.stopPropagation()}
           />
 

@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import AnimatedText from './AnimatedText';
 import { ArrowDown, X, ExternalLink, ChevronRight } from 'lucide-react';
 import portfolioData from '../data/portfolio.json';
@@ -18,17 +19,15 @@ const HeroSection = () => {
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
   const categoryKeys = Object.keys(portfolioData.categories) as Array<keyof typeof portfolioData.categories>;
-
   const skills = portfolioData.skills;
 
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 pb-28 sm:pt-28 sm:pb-32"
     >
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Diagonal Stripes */}
+      {/* Background — desktop only */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none hidden lg:block">
         <motion.div
           style={{ y, opacity }}
           className="absolute top-0 right-[20%] w-[300px] h-[200%] bg-foreground/[0.03] transform -rotate-[35deg] origin-top"
@@ -38,7 +37,6 @@ const HeroSection = () => {
           className="absolute top-[-20%] right-[10%] w-[200px] h-[200%] bg-foreground/[0.02] transform -rotate-[35deg] origin-top"
         />
 
-        {/* Floating Words on Stripes */}
         <motion.div
           style={{ y: useTransform(scrollYProgress, [0, 1], [0, 300]) }}
           className="absolute top-[20%] right-[18%] transform -rotate-[35deg]"
@@ -60,12 +58,12 @@ const HeroSection = () => {
         </motion.div>
       </div>
 
-      {/* Floating Labels - Left Side */}
+      {/* Floating Labels — desktop only */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2 }}
-        className="floating-label left-4 top-1/2 -translate-y-1/2 z-30"
+        className="floating-label left-4 top-1/2 -translate-y-1/2 z-30 hidden lg:block"
       >
         <div className="flex flex-col gap-12">
           {categoryKeys.map((key) => (
@@ -81,7 +79,7 @@ const HeroSection = () => {
         </div>
       </motion.div>
 
-      {/* Rotating Badge */}
+      {/* Rotating Badge — desktop only */}
       <motion.div
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -119,18 +117,19 @@ const HeroSection = () => {
       </motion.div>
 
       {/* Main Content */}
-      <motion.div style={{ y: textY, scale, opacity }} className="container mx-auto px-6 md:px-12 lg:px-20 relative z-10">
-        <div className="max-w-5xl">
-          {/* Tagline */}
+      <motion.div
+        style={{ y: textY, scale, opacity }}
+        className="container mx-auto px-6 md:px-12 lg:px-20 relative z-10 w-full"
+      >
+        <div className="max-w-5xl mx-auto lg:mx-0">
           <AnimatedText delay={0.2}>
-            <p className="text-muted-foreground text-lg md:text-xl mb-6 flex items-center gap-3">
-              <span className="w-12 h-[1px] bg-primary" />
+            <p className="text-muted-foreground text-sm sm:text-lg md:text-xl mb-4 sm:mb-6 flex items-center gap-3">
+              <span className="w-8 sm:w-12 h-[1px] bg-primary flex-shrink-0" />
               {portfolioData.personal.role}
             </p>
           </AnimatedText>
 
-          {/* Main Heading */}
-          <h1 className="hero-title mb-8">
+          <h1 className="hero-title mb-6 sm:mb-8">
             <AnimatedText delay={0.3}>
               <span className="block">Code<span className="text-primary">.</span></span>
             </AnimatedText>
@@ -141,16 +140,29 @@ const HeroSection = () => {
               <span className="block">Build<span className="text-primary">.</span></span>
             </AnimatedText>
             <AnimatedText delay={0.6}>
-              <span className="block text-muted-foreground/50 text-4xl md:text-5xl lg:text-6xl mt-4">
+              <span className="block text-muted-foreground/50 text-2xl sm:text-4xl md:text-5xl lg:text-6xl mt-2 sm:mt-4">
                 & Much More
               </span>
             </AnimatedText>
           </h1>
 
-          {/* CTA Buttons */}
+          {/* Mobile / tablet skills pills */}
+          <AnimatedText delay={0.7}>
+            <div className="flex flex-wrap gap-2 mb-8 lg:hidden">
+              {skills.map((skill) => (
+                <span
+                  key={skill}
+                  className="text-[10px] sm:text-xs font-medium px-3 py-1.5 rounded-full bg-secondary/80 border border-border/50 text-muted-foreground"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </AnimatedText>
+
           <AnimatedText delay={0.8}>
-            <div className="flex flex-wrap gap-4 mt-12">
-              <a href="#projects" className="btn-primary flex items-center gap-2">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+              <Link to="/projects" className="btn-primary flex items-center justify-center gap-2 text-sm sm:text-base px-6 sm:px-8 py-3.5 sm:py-4">
                 View Projects
                 <motion.span
                   animate={{ x: [0, 5, 0] }}
@@ -158,8 +170,8 @@ const HeroSection = () => {
                 >
                   →
                 </motion.span>
-              </a>
-              <a href="#contact" className="btn-outline">
+              </Link>
+              <a href="#contact" className="btn-outline text-center text-sm sm:text-base px-6 sm:px-8 py-3.5 sm:py-4">
                 Contact Me
               </a>
             </div>
@@ -167,12 +179,12 @@ const HeroSection = () => {
         </div>
       </motion.div>
 
-      {/* Scroll Indicator */}
+      {/* Scroll Indicator — hidden on small mobile */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.5 }}
-        className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4"
+        className="absolute bottom-8 sm:bottom-12 left-1/2 -translate-x-1/2 hidden sm:flex flex-col items-center gap-3"
       >
         <span className="text-xs uppercase tracking-[0.3em] text-muted-foreground">Scroll</span>
         <motion.div
@@ -183,12 +195,12 @@ const HeroSection = () => {
         </motion.div>
       </motion.div>
 
-      {/* Video Button - Bottom Right */}
+      {/* Video Button — desktop only */}
       <motion.div
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 1 }}
-        className="absolute bottom-12 right-12 hidden md:block"
+        className="absolute bottom-12 right-12 hidden lg:block"
       >
         <motion.div
           whileHover={{ scale: 1.1 }}
@@ -226,60 +238,58 @@ const HeroSection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-6 bg-background/95 backdrop-blur-xl"
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-background/95 backdrop-blur-xl"
           >
             <motion.div
               initial={{ scale: 0.9, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.9, y: 20 }}
-              className="w-full max-w-2xl bg-secondary/50 border border-border/50 rounded-3xl p-8 md:p-12 relative overflow-hidden group"
+              className="w-full max-w-2xl bg-secondary/50 border border-border/50 rounded-3xl p-6 sm:p-8 md:p-12 relative overflow-hidden group max-h-[90vh] overflow-y-auto"
             >
-              {/* Background Accent */}
               <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2" />
 
               <button
                 onClick={() => setActiveCategory(null)}
-                className="absolute top-6 right-6 p-2 rounded-full bg-background/50 hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                className="absolute top-4 right-4 sm:top-6 sm:right-6 p-2 rounded-full bg-background/50 hover:bg-primary hover:text-primary-foreground transition-all duration-300"
               >
                 <X size={20} />
               </button>
 
               <div className="relative z-10">
-                <span className="text-primary uppercase tracking-[0.3em] text-xs mb-6 block">
+                <span className="text-primary uppercase tracking-[0.3em] text-xs mb-4 sm:mb-6 block">
                   {portfolioData.categories[activeCategory as keyof typeof portfolioData.categories].projects_count}
                 </span>
 
-                <h2 className="text-4xl md:text-5xl font-display font-bold mb-6 capitalize">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-4 sm:mb-6 capitalize">
                   {portfolioData.categories[activeCategory as keyof typeof portfolioData.categories].title.toLowerCase()}
                 </h2>
 
-                <p className="text-xl text-foreground/80 leading-relaxed mb-6 font-medium italic">
+                <p className="text-base sm:text-xl text-foreground/80 leading-relaxed mb-4 sm:mb-6 font-medium italic">
                   {portfolioData.categories[activeCategory as keyof typeof portfolioData.categories].description}
                 </p>
 
-                <p className="text-muted-foreground leading-relaxed mb-10 text-lg">
+                <p className="text-muted-foreground leading-relaxed mb-8 sm:mb-10 text-sm sm:text-lg">
                   {portfolioData.categories[activeCategory as keyof typeof portfolioData.categories].details}
                 </p>
 
-                <div className="flex flex-wrap gap-4">
-                  <a
-                    href="#projects"
+                <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
+                  <Link
+                    to="/projects"
                     onClick={() => setActiveCategory(null)}
-                    className="btn-primary flex items-center gap-2"
+                    className="btn-primary flex items-center justify-center gap-2"
                   >
                     Explore More <ExternalLink size={18} />
-                  </a>
+                  </Link>
                   <button
                     onClick={() => setActiveCategory(null)}
-                    className="btn-outline flex items-center gap-2"
+                    className="btn-outline flex items-center justify-center gap-2"
                   >
-                    Close <ChevronRight size={18} className="rotate-90 md:rotate-0" />
+                    Close <ChevronRight size={18} />
                   </button>
                 </div>
               </div>
 
-              {/* Decorative Number */}
-              <div className="absolute bottom-[-20%] right-[-5%] text-[15rem] font-bold text-foreground/[0.03] select-none pointer-events-none uppercase">
+              <div className="absolute bottom-[-20%] right-[-5%] text-[10rem] sm:text-[15rem] font-bold text-foreground/[0.03] select-none pointer-events-none uppercase">
                 {activeCategory.charAt(0)}
               </div>
             </motion.div>

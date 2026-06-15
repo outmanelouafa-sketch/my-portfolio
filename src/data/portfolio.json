@@ -19,8 +19,7 @@
     "about": {
         "title": "I'm Outmane, a passionate developer based in Morocco",
         "description1": "With over 3 years of experience in mobile and web development, I specialize in creating seamless digital experiences that bridge the gap between design and functionality. My journey started with a curiosity for how things work, which evolved into a passion for building products that make a difference.",
-        "description2": "I believe in clean code, intuitive interfaces, and the power of collaboration. When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the developer community.",
-        "portraitImage": "/profile.jpg"
+        "description2": "I believe in clean code, intuitive interfaces, and the power of collaboration. When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the developer community."
     },
     "skills": [
         "Flutter",
@@ -73,22 +72,6 @@
         }
     },
     "projects": [
-        {
-            "id": "volttech-store",
-            "title": "VOLTTECH STORE",
-            "subtitle": "Industrial Machinery E-commerce",
-            "description": "A high-performance marketplace for industrial electric machinery, featuring built-in AI diagnostics and real-time inventory tracking.",
-            "fullStory": "The VOLTTECH STORE project was born from the need to modernize the industrial machinery procurement process. Built with a focus on absolute performance and intuitive user experience, it allows companies to browse, compare, and purchase heavy-duty electric equipment with ease. The application features a deep-dark premium aesthetic, designed in Figma and brought to life with React and TypeScript. We integrated complex state management to handle thousands of technical specifications and a seamless checkout experience.",
-            "thumbnail": "/image.png",
-            "tags": [
-                "React",
-                "TypeScript",
-                "Figma",
-                "Tailwind CSS"
-            ],
-            "githubUrl": "https://github.com/outmanelouafa-sketch/VOLTTECH-STORE",
-            "liveUrl": "https://volttech-store.vercel.app"
-        },
         {
             "id": "exam-assistant",
             "title": "EXAM ASSISTANT",

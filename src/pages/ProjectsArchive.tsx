@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, ArrowUpRight, Sparkles } from 'lucide-react';
+import { ArrowLeft, ArrowUpRight, Sparkles, Mail } from 'lucide-react';
 import { projects } from '@/lib/projects';
 import portfolioData from '@/data/portfolio.json';
 
@@ -34,17 +34,17 @@ const ProjectsArchive = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="max-w-3xl mb-20"
+            className="max-w-3xl mb-12 sm:mb-16 lg:mb-20"
           >
-            <p className="text-primary uppercase tracking-[0.3em] text-sm mb-6 flex items-center gap-3">
-              <span className="w-8 h-[1px] bg-primary" />
+            <p className="text-primary uppercase tracking-[0.2em] sm:tracking-[0.3em] text-xs sm:text-sm mb-4 sm:mb-6 flex items-center gap-3">
+              <span className="w-6 sm:w-8 h-[1px] bg-primary" />
               Project Archive
             </p>
-            <h1 className="text-5xl md:text-7xl font-display font-bold mb-6 leading-[1.1]">
+            <h1 className="text-3xl sm:text-5xl md:text-7xl font-display font-bold mb-4 sm:mb-6 leading-[1.1]">
               All{' '}
               <span className="font-display italic text-muted-foreground">works</span>
             </h1>
-            <p className="text-muted-foreground text-lg leading-relaxed">
+            <p className="text-muted-foreground text-sm sm:text-lg leading-relaxed">
               A curated collection of mobile apps, web platforms, and digital products —
               each crafted with attention to design, performance, and user experience.
             </p>
@@ -80,13 +80,13 @@ const ProjectsArchive = () => {
                     )}
                   </div>
 
-                  <div className="p-8 md:p-10">
-                    <div className="flex justify-between items-start mb-4">
-                      <div>
-                        <p className="text-xs font-bold text-primary uppercase tracking-[0.2em] mb-2">
+                  <div className="p-5 sm:p-8 md:p-10">
+                    <div className="flex justify-between items-start gap-3 mb-3 sm:mb-4">
+                      <div className="min-w-0">
+                        <p className="text-[10px] sm:text-xs font-bold text-primary uppercase tracking-[0.2em] mb-1 sm:mb-2">
                           {project.subtitle}
                         </p>
-                        <h2 className="text-2xl md:text-3xl font-display font-bold group-hover:text-primary transition-colors duration-300">
+                        <h2 className="text-xl sm:text-2xl md:text-3xl font-display font-bold group-hover:text-primary transition-colors duration-300 leading-tight">
                           {project.title}
                         </h2>
                       </div>
@@ -114,6 +114,32 @@ const ProjectsArchive = () => {
               </motion.div>
             ))}
           </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+            className="mt-12 sm:mt-16"
+          >
+            <div className="rounded-2xl sm:rounded-3xl border border-border/50 bg-secondary/30 p-6 sm:p-8 md:p-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+              <div className="max-w-xl">
+                <p className="text-primary uppercase tracking-[0.2em] text-xs mb-3">More Projects</p>
+                <h2 className="text-xl sm:text-2xl font-display font-bold mb-2">
+                  Want to see more work?
+                </h2>
+                <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
+                  Many of my projects are private or under NDA. Contact me by email and I'll gladly share more details about my work.
+                </p>
+              </div>
+              <a
+                href={`mailto:${portfolioData.personal.email}?subject=Portfolio%20-%20More%20Projects`}
+                className="btn-primary inline-flex items-center justify-center gap-2 flex-shrink-0"
+              >
+                <Mail className="w-4 h-4" />
+                {portfolioData.personal.email}
+              </a>
+            </div>
+          </motion.div>
         </div>
       </section>
     </main>
