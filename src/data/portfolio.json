@@ -127,6 +127,142 @@
                 "/app-exam/image copy 14.png",
                 "/app-exam/image copy 15.png"
             ]
+        },
+        {
+            "id": "app-cap",
+            "title": "CAP",
+            "subtitle": "AI Prediction & Analysis Platform",
+            "description": "A mobile app where users submit predictions, get in-depth LLM-powered analysis, and earn rewards when their insights prove accurate.",
+            "fullStory": "CAP turns everyday predictions into a structured, monetizable experience. Users submit their forecasts on topics they care about, and a large language model analyzes each submission — breaking down reasoning, confidence, and context. When predictions hit the mark, users get paid, creating a loop of engagement, learning, and reward. Built with Flutter using Clean Architecture and BLoC, the app focuses on a smooth submission flow, clear analysis results, and transparent payout tracking.",
+            "thumbnail": "/app-cap/image.png",
+            "tags": [
+                "Flutter",
+                "LLM",
+                "BLoC",
+                "Clean Architecture",
+                "AI"
+            ],
+            "githubUrl": "#",
+            "liveUrl": "#",
+            "isPrivate": true,
+            "platform": "iOS & Android",
+            "framework": "Flutter 3.x · Clean Architecture · BLoC",
+            "year": "2025",
+            "features": [
+                "Submit predictions on custom topics and events",
+                "LLM-powered analysis of reasoning and confidence",
+                "Reward system for accurate predictions",
+                "History and performance tracking dashboard",
+                "Secure user profiles and payout management"
+            ],
+            "tools": [
+                { "name": "Flutter", "role": "Cross-platform UI & navigation" },
+                { "name": "Dart", "role": "Core application logic" },
+                { "name": "BLoC", "role": "State management & business logic" },
+                { "name": "Clean Architecture", "role": "Layered app structure & separation of concerns" },
+                { "name": "LLM API", "role": "Prediction analysis & insight generation" },
+                { "name": "Flask Backend", "role": "Authentication, payments & REST API services" },
+                { "name": "Figma", "role": "UI/UX design & prototyping" }
+            ],
+            "screenshots": [
+                "/app-cap/image.png",
+                "/app-cap/image copy.png",
+                "/app-cap/image copy 2.png",
+                "/app-cap/image copy 3.png"
+            ]
+        },
+        {
+            "id": "universe-france-success",
+            "title": "UNIVERSE FRANCE SUCCESS",
+            "subtitle": "By NBIT · Student Finance Manager",
+            "description": "A Flutter app by NBIT that helps students in France track spending, manage budgets, and stay in control of their money throughout the academic year.",
+            "fullStory": "Universe France Success was developed by NBIT for the real financial challenges students face while studying in France — rent, groceries, transport, and social life on a tight budget. The app helps users set monthly limits, categorize expenses, and visualize where their money goes with clean charts and reminders. Built with Flutter, Clean Architecture, and BLoC, it delivers a fast, intuitive mobile experience tailored to the French student lifestyle, with local currency support and practical budgeting tools.",
+            "thumbnail": "/app-npIT/image.png",
+            "tags": [
+                "Flutter",
+                "Dart",
+                "BLoC",
+                "NBIT",
+                "France"
+            ],
+            "githubUrl": "#",
+            "liveUrl": "#",
+            "isPrivate": true,
+            "platform": "iOS & Android",
+            "framework": "Flutter 3.x · Clean Architecture · BLoC",
+            "year": "2025",
+            "features": [
+                "Monthly budget planning and expense tracking",
+                "Category-based spending breakdown",
+                "Visual charts and spending insights",
+                "Recurring expense reminders",
+                "Designed for students living in France",
+                "Offline-friendly local data storage"
+            ],
+            "tools": [
+                { "name": "Flutter", "role": "Cross-platform UI & navigation" },
+                { "name": "Dart", "role": "Core application logic" },
+                { "name": "BLoC", "role": "State management & business logic" },
+                { "name": "Clean Architecture", "role": "Layered app structure & separation of concerns" },
+                { "name": "Hive", "role": "Offline local storage" },
+                { "name": "Flask Backend", "role": "User sync & REST API services" },
+                { "name": "Figma", "role": "UI/UX design & prototyping" }
+            ],
+            "screenshots": [
+                "/app-npIT/image.png",
+                "/app-npIT/image copy.png",
+                "/app-npIT/image copy 2.png",
+                "/app-npIT/image copy 3.png",
+                "/app-npIT/image copy 4.png",
+                "/app-npIT/image copy 5.png"
+            ]
+        },
+        {
+            "id": "ems-app",
+            "title": "EMS",
+            "subtitle": "Electricity & Water Management",
+            "description": "A utility management app for monitoring electricity and water consumption, tracking usage patterns, and helping users reduce waste and costs.",
+            "fullStory": "EMS gives households and facilities a clear view of their electricity and water usage in one place. Users can log meter readings, compare consumption over time, set alerts for unusual spikes, and access tips to optimize their utility bills. The app was built with Flutter using Clean Architecture and BLoC, prioritizing readable dashboards, reliable data entry, and a practical workflow for day-to-day utility management.",
+            "thumbnail": "/app-ems/image.png",
+            "tags": [
+                "Flutter",
+                "Dart",
+                "BLoC",
+                "Utilities",
+                "Management"
+            ],
+            "githubUrl": "#",
+            "liveUrl": "#",
+            "isPrivate": true,
+            "platform": "iOS & Android",
+            "framework": "Flutter 3.x · Clean Architecture · BLoC",
+            "year": "2025",
+            "features": [
+                "Electricity and water consumption tracking",
+                "Meter reading logs with date history",
+                "Usage charts and monthly comparisons",
+                "Alerts for abnormal consumption spikes",
+                "Cost estimation and savings tips",
+                "Multi-property support for managers"
+            ],
+            "tools": [
+                { "name": "Flutter", "role": "Cross-platform UI & navigation" },
+                { "name": "Dart", "role": "Core application logic" },
+                { "name": "BLoC", "role": "State management & business logic" },
+                { "name": "Clean Architecture", "role": "Layered app structure & separation of concerns" },
+                { "name": "Hive", "role": "Offline local storage" },
+                { "name": "Flask Backend", "role": "Data sync & REST API services" },
+                { "name": "Figma", "role": "UI/UX design & prototyping" }
+            ],
+            "screenshots": [
+                "/app-ems/image.png",
+                "/app-ems/image copy.png",
+                "/app-ems/image copy 2.png",
+                "/app-ems/image copy 3.png",
+                "/app-ems/image copy 4.png",
+                "/app-ems/image copy 5.png",
+                "/app-ems/image copy 6.png"
+            ]
         }
     ]
 }
